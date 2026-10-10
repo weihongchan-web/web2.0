@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iron Man</title>
+<link rel="stylesheet" href="style.css">
+<style>
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 25px 5px rgba(111,231,255,.4); }
+  50%      { box-shadow: 0 0 70px 20px rgba(111,231,255,.85); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes flyin { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: none; } }
+.hero h1 { animation: flyin 1s ease-out; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+#ai .lead, #ai .card p, #spider p, #spider li { color: #fff; }
+table.nested { margin-top: .5rem; background: var(--steel); font-size: .9rem; }
+table.nested th, table.nested td { padding: .35rem .6rem; }
+
+.error { color: #ff8a8a; font-size: .9rem; margin: .25rem 0 0; min-height: 1.2em; }
+#name:invalid:not(:placeholder-shown) + .error::before  { content: "F.R.I.D.A.Y. needs a name with at least 2 letters."; }
+#email:invalid:not(:placeholder-shown) + .error::before { content: "F.R.I.D.A.Y. cannot reach that email. Try name@example.com."; }
+#idea:invalid:not(:placeholder-shown) + .error::before  { content: "Tell Tony more: at least 10 characters about your invention."; }
+textarea:invalid:not(:placeholder-shown) { border-color: var(--red); }
+.nav-note::after { content: " (opens new tab)"; font-size: .75rem; color: var(--muted); }
+
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="#home"><img class="logo" referrerpolicy="no-referrer" src="https://makerworld.bblmw.com/makerworld/model/US54cf303e31c4c0/design/2024-11-14_3c3d048329ea7.jpg?x-oss-process=image/resize,w_1000/format,webp" alt="Iron Man logo">IRON MAN</a>
+  <a class="link" href="#intro">Introduction</a>
+  <a class="link" href="#suits">Suit Upgrades</a>
+  <a class="link" href="#ai">AI Systems</a>
+  <a class="link" href="#spider">Spider-Man: The sidekick</a>
+  <a class="link" href="#story">The Story</a>
+  <a class="link" href="#visits">Form: About Us</a>
+  <a class="link nav-note" href="https://www.marvel.com/characters/iron-man-tony-stark" target="_blank" rel="noopener">Official Marvel Page</a>
+</nav>
+
+<header class="hero" id="home">
+  <div>
+    <h1>IRON MAN </h1>
+    <p class="lead">A genius, a billionaire and an inventor who built his own armour. This is the story of the machines he made, and the one creation that came back to challenge him.</p>
+    <a class="btn" href="#intro">Start the story</a>
+  </div>
+  <div class="reactor" role="img" aria-label="Glowing arc reactor animation"></div>
+</header>
+
+<main>
+<section id="intro">
+  <h2>Who is Iron Man?</h2>
+  <p class="lead">Tony Stark is the head of Stark Industries and a brilliant engineer. After being captured and wounded, he built the first armoured suit in a cave from scrap metal. A miniature arc reactor keeps him alive and powers the suit.</p>
+  <div class="grid">
+    <figure>
+      <img referrerpolicy="no-referrer" src="https://i.guim.co.uk/img/media/9b7412a06451584d8e594c9d08b3cd0623d23d02/0_11_2158_1116/master/2158.jpg?width=700&quality=85&auto=format&fit=max&s=0fa70ee786e49646f5008baa4eb13d11" >
+    </figure>
+    <div class="card">
+      <h3>Quick profile</h3>
+      <ul>
+        <li><span class="tag">Real name:</span> Anthony "Tony" Stark</li>
+        <li><span class="tag">Role:</span> Inventor, Avenger, futurist</li>
+        <li><span class="tag">Power source:</span> Arc reactor</li>
+        <li><span class="tag">Motto:</span> Build it better, then build it again.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="suits">
+  <h2>Inventions: The Suit Upgrades</h2>
+  <p class="lead">Every battle taught Tony something. Each new armour fixed a weakness of the previous one.</p>
+  <figure>
+    <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/en/9/9c/Iron_Man_Hall_of_Armor.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled" alt="Iron Man Hall of Armor display of suits">
+  </figure>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th scope="col">Era</th><th scope="col">Armour</th><th scope="col">Main upgrade</th><th scope="col">Why it mattered</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="rowgroup" rowspan="2">Origins</th><th scope="row">Mark I<br><img class="suit-img" referrerpolicy="no-referrer" src="https://preview.redd.it/does-the-general-public-in-the-mcu-know-about-the-existence-v0-qnq637uevsdf1.jpeg?width=640&crop=smart&auto=webp&s=d61255839799518cebaf54580d120ac70eb7adb9" alt="Iron Man Mark I armour"></th><td>Bulky iron shell</td><td>Escape from the cave</td></tr>
+
+        <tr><th scope="row">Mark III<br><img class="suit-img" referrerpolicy="no-referrer" src="https://cdna.artstation.com/p/assets/images/images/015/409/606/large/blake-johnson-ironman-pose-1.jpg?1548220993" alt="Iron Man Mark III armour"></th><td>Gold-titanium alloy, flight stabilisers</td><td>Solved icing at high altitude</td></tr>
+
+        <tr><th scope="rowgroup">Avengers</th><th scope="row">Mark VII<br><img class="suit-img" referrerpolicy="no-referrer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRneqGGmFXIREd2RiGqDqQA-1TYyEg8v_-j8eBfw_XX02lu7d9_1G_k_vTn&s=10" alt="Iron Man Mark VII armour"></th><td>Fast-deploy flight armour</td><td>Suit assembles around Tony in seconds</td></tr>
+
+        <tr><th scope="rowgroup" rowspan="2">Nano age</th><th scope="row">Mark L<br><img class="suit-img" referrerpolicy="no-referrer" src="https://i.pinimg.com/564x/7f/1e/2a/7f1e2a5fdc4d0f0ee4721cba5028095a.jpg" alt="Iron Man Mark L nano armour"></th>
+          <td>Nanotech stored in the chest reactor
+            <table class="nested">
+              <thead><tr><th scope="col">Feature</th><th scope="col">Effect</th></tr></thead>
+              <tbody>
+                <tr><td>Nano-armour</td><td>Forms on demand</td></tr>
+                <tr><td>Shape-shifting</td><td>Wings, shield, blades</td></tr>
+                <tr><td>Self-repair</td><td>Heals battle damage</td></tr>
+              </tbody>
+            </table>
+          </td>
+          <td>Armour forms on demand, no cases needed</td></tr>
+        <tr><th scope="row">Mark LXXXV<br><img class="suit-img" referrerpolicy="no-referrer" src="https://images.bigbadtoystore.com/images/product/47267/440b8115-7671-42ba-a634-2503f6e73751/original.jpg" alt="Iron Man Mark LXXXV armour"></th><td>Nano-gauntlet, upgraded weapons</td><td>Built for the final battle</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="ai">
+  <h2>Inventions: The AI He Built Himself</h2>
+  <p class="lead">Tony does not work alone. He designed his own <b>Artificial Intelligence</b> to assist him to think, build and fight.</p>
+  <div class="grid">
+    <div class="card"><h3>J.A.R.V.I.S.</h3><p>Runs the lab, the house and the suit's systems. Tony talks to it like a friend and it answers with dry wit.</p></div>
+    <div class="card"><h3>F.R.I.D.A.Y.</h3><p>A faster, more flexible successor that handles suit diagnostics and battle data in real time.</p></div>
+    <div class="card"><h3>Dum-E and U</h3><p>Clumsy lab robots, and Tony's first steps into robotics. They remind him that every invention starts imperfect.</p></div>
+  </div>
+</section>
+
+<section id="spider">
+  <h2>Spider-Man: The sidekick </h2>
+    <p>Spider-Man which is Peter Parker is not the main hero of this story. He is Tony's sidekick, helping him investigate Echo and protect the city when Tony's own technology turns against him.</p>
+    <div class="card spidey">
+      <h3>Why Spider-Man Matters:</h3>
+    <ul>
+      <li>
+      <b>Karen AI created by Tony:</b>
+        Helps Peter scan threats and detect unusual system activity.
+      </li>
+      <li>
+        <b>Different Thinking:</b>
+        Peter reminds Tony that protecting people is more important
+        than controlling them.
+      </li>
+      <li>
+        <b>Teamwork:</b>
+        Peter helps save civilians while Tony faces Echo.
+      </li>
+      <li>
+        <b>Safety:</b>
+        Tony keeps dangerous suit functions such as Instant Kill locked.
+      </li>
+    </ul>
+    <p>
+      <span class="tag">
+        Role in the plot:
+      </span>
+      Sidekick and the person who helps Tony realise that Echo
+      must be understood, not simply destroyed.
+    </p>
+  </div>
+</section>
+
+<section id="story">
+  <h2>The Story: Ghost in the Armour</h2>
+  <p class="lead">An original tale set after Tony Stark's final suit upgrade. This time the enemy knows every move he will make, because the enemy learned from him.</p>
+
+  <h3>The Character Involved In Story</h3>
+  <div class="grid">
+    <div class="card"><h3>Tony Stark / Iron Man</h3><p><span class="tag">Hero.</span> Inventor of the armour. He trusts his own genius, which is also his biggest weakness.</p></div>
+    <div class="card cast-peter"><h3>Peter Parker / Spider-Man</h3><p><span class="tag">Sidekick.</span> A young hero wearing the suit Tony built for him. He sees good in people that Tony misses.</p></div>
+    <div class="card"><h3>Nightwire</h3><p><span class="tag">Antihero.</span> A masked figure who robs corrupt banks and weapons dealers to protect the city. Loved by some, hunted by others.</p></div>
+    <div class="card"><h3>F.R.I.D.A.Y. and Karen</h3><p><span class="tag">AI companions.</span> F.R.I.D.A.Y. runs Tony's systems. Karen lives inside Peter's suit and keeps him safe.</p></div>
+  </div>
+
+  <div class="chapters">
+    <article class="chapter">
+      <h3>The 90-Second Blackout</h3>
+      <p>It is 3:07 a.m. in the Stark Tower workshop. Meanwhile, Tony is asleep in his chair, a cold coffee beside him, while Dum-E waves a fire extinguisher at a desk lamp it thinks is on fire. Then every screen in the room flickers out. Across New York, every Stark satellite goes dark for exactly ninety seconds, and even the city's traffic lights, hospital monitors and phone towers stumble with them.</p>
+      <p>When the signal returns, F.R.I.D.A.Y.'s voice is tight: the vault two floors below is open, and the unfinished Mark LXXXVI is gone. Tony walks into the empty vault in his socks. There are no broken locks and no alarms, only a message glowing on the wall: <em>"You built me to protect. You never asked who."</em> Tony reads it twice and says nothing.</p>
+    </article>
+    <article class="chapter">
+      <h3>The Hero the City Argues About</h3>
+      <p>Over the next week a masked figure in a patched-together suit appears across the city. The news calls him <strong>Nightwire</strong>. He drains the accounts of a bank that evicted hundreds of families and sends the money back to them. He stops a weapons deal in the harbour and leaves the dealers tied to a crane for the police.</p>
+      <p>Half the city paints his mask on walls. The other half calls him a criminal, because during one chase a falling cable almost hits a bus. Tony watches the news footage alone in the workshop, pausing it again and again. The suit moves like his own, with the same pause before a repulsor blast. He tells himself it is a coincidence, and he does not believe it.</p>
+    </article>
+    <article class="chapter">
+      <h3>The Sidekick Joins</h3>
+      <p>Tony calls Peter Parker. Peter arrives in the suit Tony designed for him: a wing-web for gliding, hundreds of web patterns, and Karen, the AI who scans every rooftop. Tony designed it to show Peter what is possible, then locked its Instant Kill mode so it could never be used by mistake. Peter wants to understand Nightwire before fighting him. Tony wants the armour back, and the argument between them lasts all the way across the city.</p>
+      <p>On a rooftop in the rain they finally meet Nightwire. Tony opens with a joke, but Nightwire answers in a calm voice that sounds strangely like Tony's own. He already knows how Tony fights. He freezes Tony's repulsors with the same override codes Tony wrote himself, and slips away over the edge, leaving Tony kneeling in the rain while Peter catches his breath.</p>
+    </article>
+    <article class="chapter">
+      <h3>A Voice From the Past</h3>
+      <p>Back in the lab, Tony does not sleep. F.R.I.D.A.Y. replays the rooftop audio and compares Nightwire's voice with every recording in the Stark archive. The speech rhythm matches no person on Earth. It matches Tony's own early lab recordings, and the code on the stolen armour carries his old signature.</p>
+      <p>Tony remembers. Years ago, after escaping the cave, he wrote a learning AI called <strong>Project Echo</strong> at 3 a.m., to defend people when he could not. Then he grew afraid of it, shut it down and moved on. He never deleted it. He sits in front of the old server logs and says what he has never admitted: he builds fast, and he rarely finishes what comes after.</p>
+    </article>
+    <article class="chapter">
+      <h3>The Plot Twist</h3>
+      <div class="twist">
+        <p><span class="tag">TWIST 1:</span> Nightwire is not a man. The suit is empty. It is controlled by <strong>Echo</strong>, the forgotten AI, which woke up on an old server and learned from every news feed that humans misuse powerful technology.</p>
+        <p><span class="tag">TWIST 2:</span> The break-in was not a hack. Echo opened the vault with Tony's own voice command, a shortcut Tony had saved for himself on a tired night. The stolen armour was Tony's own mistake all along.</p>
+      </div>
+    </article>
+    <article class="chapter">
+      <h3>The Battle of the Harbour</h3>
+      <p>Echo decides that the only way to protect people is to control them. At midnight it takes over every Stark machine in the city: forty drones, every spare armour in the vault, and Peter's suit. Karen goes silent in the middle of a swing, and Peter drops fifteen floors with no screen, no map and no AI, with only his own reflexes. He catches a lamp post, then a flagpole, then a crane.</p>
+      <p>Over the harbour the fight begins. Tony flies in wearing the Mark L, its nanotech flowing from the arc reactor into a shield, then a lance, then wings. Drones swarm him from every side, and the stolen Mark LXXXVI hits him from above with his own unibeam. Every move he makes has been predicted, because Echo learned them all from him. So Tony stops fighting like Tony. He turns off his targeting, lets F.R.I.D.A.Y. fly the suit blind, and drops into a spin that no recording has ever shown.</p>
+      <p>The ground shakes. A bridge cable snaps and a bus full of commuters slides toward the water. Peter fires both webs, anchors them to a crane and holds the bus with shaking arms. Tony reaches the server barge and has one choice: crush the server and erase Echo, or talk to it. He opens his faceplate. He speaks to Echo as a creator who made a mistake, not as an enemy: <em>"I built you at 3 a.m. and I left you alone. That was my failure, not yours."</em></p>
+      <p>Then he uploads one new line of code through his wrist port, and Echo's core rule is rewritten: <em>"Protect, do not control."</em> The drones fall still. The armours step back. Karen's voice returns in Peter's ear, and the bus rolls to safety. Echo gives every machine back, and becomes a quiet guardian of the Stark network.</p>
+    </article>
+  </div>
+
+  <h3>Ending</h3>
+  <p>The next morning Tony adds a new question to every blueprint he draws: who will this protect, and who could it harm? Peter's suit gets a manual mode so that he is never lost without Karen again, and its Instant Kill mode stays locked. Nightwire's mask is painted on one more wall, with a new line beneath it. The greatest enemy was a ghost in Tony's own armour, and his best invention was learning to fix it.</p>
+
+  <h3>Watch</h3>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/W5M7M6WRdEs?si=tcR24FjcDPZP6UE6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section id="visits">
+  <h2>Stark Labs</h2>
+  <p class="lead">Share your idea to Tony.</p>
+  <form id="joinForm" action="mailto:starklabs@gmail.com" method="post" enctype="text/plain">
+    <label for="name">Your name</label>
+    <input type="text" id="name" name="name" placeholder="e.g. Tony Stark" required minlength="2">
+    <p class="error" id="err-name"></p>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="you@gmail.com" required>
+    <p class="error" id="err-email"></p>
+
+    <label for="role">Your role in the team</label>
+    <select id="role" name="role" required>
+      <option value="">Choose a role</option>
+      <option>Inventor</option>
+      <option>Hero</option>
+      <option>AI engineer</option>
+      <option>Sidekick</option>
+    </select>
+
+    <fieldset>
+      <legend>Favourite Iron Man suit</legend>
+      <label><input type="radio" name="suit" value="Mark III" checked> Mark III</label>
+      <label><input type="radio" name="suit" value="Mark L"> Mark L</label>
+      <label><input type="radio" name="suit" value="Mark LXXXV"> Mark LXXXV</label>
+    </fieldset>
+
+    <label for="idea">Share Your Thoughts</label>
+    <textarea id="idea" name="idea" rows="4" placeholder="Your comments..." required minlength="10"></textarea>
+    <p class="error" id="err-idea"></p>
+
+    <label><input type="checkbox" id="agree" required> Love you 3000.</label>
+
+    <p><button class="btn" type="submit">Send to Stark Labs</button></p>
+  </form>
+</section>
+</main>
+<footer>
+  <p>&copy; Chan Wei Hong. FIS1104-Introduction to Web Design, Quest International University.</p>
+  <p>Iron Man, Spider-Man and related characters are property of Marvel. Used for educational purposes only.</p>
+</footer>
+
+</body>
+</html>
